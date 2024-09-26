@@ -14,7 +14,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     const EndIcon = endIcon;
 
     return (
-      <div className='w-1/4 relative'>
+      <div className='w-3/4 relative'>
         {StartIcon && (
           <div className='absolute left-1.5 top-1/2 transform -translate-y-1/2'>
             <StartIcon size={18} className='text-muted-foreground' />
