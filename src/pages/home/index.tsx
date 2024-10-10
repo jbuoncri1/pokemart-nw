@@ -1,25 +1,25 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
 
-import PageLayout from "@/components/page-layout";
+import PageLayout from "@/components/page-layout"
 
-import { mockData } from "@/utils";
+import { mockData } from "@/utils"
 import {
   Carousel,
   CarouselContent,
   CarouselNext,
   CarouselItem,
   CarouselPrevious,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
+} from "@/components/ui/carousel"
+import Autoplay from "embla-carousel-autoplay"
 
-const { banners } = mockData;
+const { banners } = mockData
 
 const Home: React.FC = () => {
-  const [currentBanner, setCurrentBanner] = useState(banners[0].image);
+  const [currentBanner, setCurrentBanner] = useState(banners[0].image)
 
-  useEffect(() => {}, [currentBanner]);
+  useEffect(() => {}, [currentBanner])
 
-  console.log(currentBanner);
+  console.log(currentBanner)
 
   return (
     <PageLayout>
@@ -55,7 +55,7 @@ const Home: React.FC = () => {
                     />
                   </div>
                 </CarouselItem>
-              );
+              )
             })}
           </CarouselContent>
           <CarouselPrevious />
@@ -63,7 +63,7 @@ const Home: React.FC = () => {
         </Carousel>
       </div>
     </PageLayout>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
