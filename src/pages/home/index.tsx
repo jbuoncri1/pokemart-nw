@@ -25,7 +25,7 @@ const Home: React.FC = () => {
     <PageLayout>
       <div className={`flex items-center justify-center h-40`}>
         <Carousel
-          className="w-full max-w-xs"
+          className="w-full"
           opts={{ loop: true }}
           plugins={[
             Autoplay({
@@ -37,13 +37,22 @@ const Home: React.FC = () => {
             {banners.map((banner) => {
               return (
                 <CarouselItem
-                  className={`bg-center bg-cover w-full`}
+                  className={`bg-center bg-cover w-full relative h-full`}
                   key={banner.setCode}
                 >
-                  <div className={`flex items-center justify-center`}>
+                  <div
+                    className={`flex items-center justify-center p-8 py-64 z-20`}
+                  >
                     <span className="w-full text-4xl font-semibold text-white">
                       {banner.name}
                     </span>
+                  </div>
+                  <div className="absolute inset-0 z-10">
+                    <img
+                      src={banner.image}
+                      alt={banner.name}
+                      className="h-full aspect-auto object-cover"
+                    />
                   </div>
                 </CarouselItem>
               );
