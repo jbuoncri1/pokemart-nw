@@ -1,7 +1,7 @@
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
 
-import Header from '@/components/header';
-import Footer from '@/components/footer';
+import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 interface PageLayoutProps {
   children: ReactNode;
@@ -9,9 +9,9 @@ interface PageLayoutProps {
 
 const PageLayout: React.FC<PageLayoutProps> = ({ children }) => {
   return (
-    <div className='flex flex-col justify-between min-h-screen'>
+    <div className="flex flex-col justify-between min-h-screen">
       <Header />
-      <div>{children}</div>
+      <div className="flex items-center justify-center">{children}</div>
       <Footer />
     </div>
   );

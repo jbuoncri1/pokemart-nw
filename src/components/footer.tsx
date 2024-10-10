@@ -1,8 +1,8 @@
 import React from "react";
 
-import ebay from "@/assets/ebay.svg";
-import instagram from "@/assets/instagram.svg";
-import facebook from "@/assets/facebook.svg";
+import ebay from "@/assets/svg/ebay.svg";
+import instagram from "@/assets/svg/instagram.svg";
+import facebook from "@/assets/svg/facebook.svg";
 
 const Footer: React.FC = () => {
   return (
