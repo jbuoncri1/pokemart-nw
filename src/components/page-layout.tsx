@@ -10,8 +10,10 @@ interface PageLayoutProps {
 const PageLayout: React.FC<PageLayoutProps> = ({ children }) => {
   return (
     <div className="flex flex-col justify-between min-h-screen">
-      <Header />
-      <div className="flex items-center justify-center">{children}</div>
+      <div className="flex flex-col min-h-screen">
+        <Header />
+        <div>{children}</div>
+      </div>
       <Footer />
     </div>
   );

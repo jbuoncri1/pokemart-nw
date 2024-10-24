@@ -1,66 +1,42 @@
-import { useEffect, useState } from "react";
-
 import PageLayout from "@/components/page-layout";
 
 import { mockData } from "@/utils";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselNext,
-  CarouselItem,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
+// import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+// import { Carousel } from "react-responsive-carousel";
+import Slider from "react-slick";
 
 const { banners } = mockData;
 
 const Home: React.FC = () => {
-  const [currentBanner, setCurrentBanner] = useState(banners[0].image);
-
-  useEffect(() => {}, [currentBanner]);
-
-  console.log(currentBanner);
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
 
   return (
     <PageLayout>
-      <div className={`flex items-center justify-center h-40`}>
-        <Carousel
-          className="w-full"
-          opts={{ loop: true }}
-          plugins={[
-            Autoplay({
-              delay: 3000,
-            }),
-          ]}
-        >
-          <CarouselContent>
-            {banners.map((banner) => {
-              return (
-                <CarouselItem
-                  className={`bg-center bg-cover w-full relative h-full`}
-                  key={banner.setCode}
-                >
-                  <div
-                    className={`flex items-center justify-center p-8 py-64 z-20`}
-                  >
-                    <span className="w-full text-4xl font-semibold text-white">
-                      {banner.name}
-                    </span>
-                  </div>
-                  <div className="absolute inset-0 z-10">
-                    <img
-                      src={banner.image}
-                      alt={banner.name}
-                      className="h-full aspect-auto object-cover"
-                    />
-                  </div>
-                </CarouselItem>
-              );
-            })}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
+      {/* <Carousel infiniteLoop autoPlay showThumbs={false}>
+        {banners.map((banner) => (
+          <div key={banner.setCode}>
+            <img className="h-60" src={banner.image} alt={banner.name} />
+            <p className="legend">{banner.name}</p>
+          </div>
+        ))}
+      </Carousel> */}
+      <div className="slider-container">
+        <Slider {...settings}>
+          {banners.map((banner) => (
+            <div
+              key={banner.id}
+              className={`bg-[url('${banner.image}')] w-full h-48`}
+            >
+              <p className="text-white">{banner.name}</p>
+            </div>
+          ))}
+        </Slider>
       </div>
     </PageLayout>
   );
