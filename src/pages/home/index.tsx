@@ -18,14 +18,6 @@ const Home: React.FC = () => {
 
   return (
     <PageLayout>
-      {/* <Carousel infiniteLoop autoPlay showThumbs={false}>
-        {banners.map((banner) => (
-          <div key={banner.setCode}>
-            <img className="h-60" src={banner.image} alt={banner.name} />
-            <p className="legend">{banner.name}</p>
-          </div>
-        ))}
-      </Carousel> */}
       <div className="slider-container">
         <Slider {...settings}>
           {banners.map((banner) => (
