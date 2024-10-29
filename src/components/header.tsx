@@ -26,8 +26,8 @@ const linkBtns = [
 
 const Header: React.FC = () => {
   return (
-    <div>
-      <div className="flex w-full items-center justify-between gap-4 h-20 bg-blue-900 text-white px-8">
+    <>
+      <header className="flex items-center justify-between gap-4 h-20 bg-blue-900 text-white px-8">
         <img src={logo} alt="logo" width={50} height={50} />
         <Input type="search" placeholder="Enter search term" endIcon={Search} />
         <div className="flex items-center">
@@ -39,19 +39,21 @@ const Header: React.FC = () => {
           </div>
           <ShoppingCart />
         </div>
-      </div>
-      <div className="w-full h-12 bg-teal-100 flex items-center justify-center">
-        {linkBtns.map(({ id, name }) => (
-          <Button
-            key={id}
-            className="text-lg font-semibold font-sans"
-            variant="link"
-          >
-            {name}
-          </Button>
-        ))}
-      </div>
-    </div>
+      </header>
+      <section>
+        <nav className="w-full h-12 bg-teal-100 flex items-center justify-center">
+          {linkBtns.map(({ id, name }) => (
+            <Button
+              key={id}
+              className="text-lg font-semibold font-sans"
+              variant="link"
+            >
+              {name}
+            </Button>
+          ))}
+        </nav>
+      </section>
+    </>
   );
 };
 
